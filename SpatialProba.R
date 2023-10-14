@@ -6,12 +6,7 @@ library(roxygen2)
 #' @param env.rast: a SpatRaster objects with environmental layers to generate spatial layer of probabilities
 #' @param quadr_term: named vector with names of coefs for which a quadratic term is specified (without prefix 'quadr_')
 #' @param marginalPlots: logical, if TRUE returns marginal plot
-
-# myCoeff<-c(intercept = 1, bio1 = 1.6, quad_bio1= -0.10, bio12= 0.0008)
-# envData.t<-terra::rast(envData)
-
-# coefs = Fagus.coefs; env.rast =BioData;  quadr_term = "bio1"; marginalPlots=TRUE
-# coefs = myCoeff; env.rast =envData; quadr_term = NULL; marginalPlots=TRUE
+#' @author Manuele Bazzichetto, Daniele Da Re
 
 SpatialProba <- function(coefs=NULL, env.rast=NULL, quadr_term = NULL, marginalPlots=TRUE) {
   #check if names(coefs) is null
@@ -123,9 +118,3 @@ SpatialProba <- function(coefs=NULL, env.rast=NULL, quadr_term = NULL, marginalP
 
   
 }
-
-# debugonce(SpatialProba)
-# SpatialProba(coefs = Fagus.coefs, env.rast =BioData,  quadr_term = "bio1", marginalPlots=TRUE)
-# 
-# myCoeff<-c(intercept = 5, bio1 = 0.7, bio12= -0.2)
-# plot(SpatialProba(coefs = myCoeff, env.rast = BioData))
